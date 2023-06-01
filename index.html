@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lexend+Deca&family=Lexend:wght@300&family=Monoton&family=Montserrat:wght@500&family=Open+Sans&family=Pacifico&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+          fontFamily: {
+            'lexend': 'Lexend Deca',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-lexend bg-sky-100 overflow-hidden">
+
+  <!-- Responsive Guide -->
+
+  <div class="flex items-center justify-end fixed right-0">
+    <div class="relative bg-white border border-gray-300 p-4">
+      <div class="absolute top-0 right-0 backdrop-blur-md font-bold text-lg px-4 py-2" id="width"></div>
+    </div>
+  </div>
+  <script>
+    function updateWidth() {
+      var widthElement = document.getElementById('width');
+      widthElement.textContent = window.innerWidth + 'px';
+    }
+
+    window.addEventListener('resize', updateWidth);
+    window.addEventListener('load', updateWidth);
+  </script>
+
+  <!-- Responsive Guide end -->
+
+  <!-- <div class="max-w-[420px] bg-sky-100 overflow-hidden relative border-2"> -->
+  <div class="">
+
+    <div class="overlay fixed z-[110] w-full h-screen bg-orange-300 flex items-center justify-center -left-[100%] duration-300">
+      <h5 class="text-2xl font-semibold">Loading...</h5>
+    </div>
+  
+      <nav class="flex w-full justify-between backdrop-blur-md fixed z-[100] top-0">
+          <div class="text-2xl font-semibold text-teal-700 m-6">
+              <a href="#">Imaginary</a>
+          </div>
+          
+          <div class="rounded-xl h-11 w-11 bg-white m-6 p-2 flex flex-col justify-evenly cursor-pointer nav-toggle">
+              <div class="h-[3px] w-full bg-slate-500 rounded-full"></div>
+              <div class="h-[3px] w-full bg-slate-500 rounded-full"></div>
+              <div class="h-[3px] w-full bg-slate-500 rounded-full"></div>
+          </div>
+
+          <div class="nav-menu absolute z-50 w-full h-screen bg-orange-100 flex items-center justify-center p-16 -right-[110%] transition-all">
+            <div class="rounded-xl h-11 w-11 bg-white m-6 p-2 cursor-pointer absolute right-3 top-1 flex items-center justify-center nav-toggle">
+              <div class="h-[3px] w-9 bg-slate-500 rounded-full absolute rotate-45"></div>
+              <div class="h-[3px] w-9 bg-slate-500 rounded-full absolute -rotate-45"></div>
+            </div>
+            <div class="w-full h-full grid grid-cols-3">
+              <div class="col-span-1 flex flex-col"></div>
+              <div class="col-span-2 flex flex-col"></div>
+              <div class="col-span-1 flex flex-col">
+                <h4 class="text-end m-5 text-lg font-semibold text-slate-600">Menu</h4>
+              </div>
+              <div class="col-span-2 flex flex-col nav-menu-list">
+                <ul class="m-5 text-4xl text-end">
+                  <li class="mb-1"><a href="#" class="hover:text-blue-700 duration-150">Home</a></li>
+                  <li class="mb-1"><a href="#" class="hover:text-blue-700 duration-150">About me</a></li>
+                  <li class="mb-1"><a href="#" class="hover:text-blue-700 duration-150">Blogs</a></li>
+                  <li class="mb-1"><a href="#" class="hover:text-blue-700 duration-150">Products</a></li>
+                  <li class="mb-1"><a href="#" class="hover:text-blue-700 duration-150">Services</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </nav>
+  
+      <section id="home" class="home w-full h-screen overflow-y-scroll overflow-x-hidden">
+        
+        <div class="pt-32 pb-8 rounded-b-3xl">
+            <div class="flex flex-col justify-center">
+                <a href="#profile" class="w-40 h-40 rounded-full bg-sky-500 mx-auto border-4 border-white overflow-hidden flex mb-2">
+                    <img src="./img/medmed.jpg" alt="profile" class="w-full h-full object-cover">
+                </a>
+                <a href="#" class="absolute h-screen w-full bg-[rgba(0,0,0,0.9)] z-[109] top-0 flex items-center invisible target:visible duration-200" id="profile">
+                  <div class="bg-slate-800 w-full aspect-square overflow-hidden flex">
+                    <img src="./img/medmed.jpg" alt="profile" class="w-full h-full object-cover">
+                  </div>
+                </a>
+                <div class="text-content text-center">
+                    <h3 class="font-semibold text-slate-900 text-2xl my-1">Medmed</h3>
+                    <p class="text">Graphic Designer</p>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <div class="rounded-full overflow-hidden text-center font-semibold text-white min-w-[100px] m-1">
+                        <a href="#about" onclick="delayHref(event, '#about')" class="w-full h-full px-4 py-2 bg-purple-500 flex justify-center items-center hover:bg-purple-700">
+                          <p class="mr-2">About me</p>
+                          <div class="w-7 h-5 bg-white rounded-r-xl rounded-tl-xl text-purple-500 text-sm font-bold flex justify-center items-center">i</div>
+                        </a>
+                    </div>
+                    <div class="rounded-full overflow-hidden text-center font-semibold text-white min-w-[100px] m-1">
+                        <a href="#" class="w-full h-full px-4 py-2 bg-emerald-500 flex justify-center hover:bg-emerald-700"><span class="mr-1">Chat</span><img width="24" height="24" src="https://img.icons8.com/material/24/ffffff/speech-bubble-with-dots.png" alt="speech-bubble-with-dots"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class=" p-5 grid grid-cols-4 gap-3 rounded-t-3xl bg-white pb-10">
+    
+            <div class="col-span-4 h-20">
+                <h4 class="text-3xl font-semibold m-2">My stuff & Links</h4>
+            </div>
+    
+            <a href="#hobi" onclick="delayHref(event, '#hobi')" class="block col-span-2 min-h-[160px] rounded-3xl bg-orange-500 relative p-5 group hover:scale-95 cursor-pointer duration-200 ease-out">
+              <img src="./img/game.png" alt="" class="w-1/2 bottom-1 right-2 scale-125 mx-auto -mt-10 group-hover:scale-[1.3] duration-200 ease-out">
+              <div class="text-content relative z-10">
+                <h3 class="text-3xl font-bold text-center mt-8 text-white">Gaming</h3>
+              </div>
+            </a href="hobi">
+    
+            <a href="#skills" onclick="delayHref(event, '#skills')" class="col-span-2 min-h-[160px] rounded-3xl bg-sky-500 relative group hover:scale-95 cursor-pointer duration-200 ease-out">
+              <img src="./img/robot.png" alt="robot" class="h-32 mx-auto -mt-12 group-hover:scale-110 duration-200 ease-out">
+              <div class="text-content relative z-10">
+                <h3 class="text-3xl font-bold text-center text-white mt-3">Skills</h3>
+              </div>
+            </a>
+  
+            <a href="#experiments" onclick="delayHref(event, '#experiments')" class="col-span-4 min-h-[160px] rounded-3xl bg-gradient-to-br from-purple-500 to-sky-500 relative p-8 group hover:scale-95 cursor-pointer duration-200 ease-out">
+              <img src="./img/drone.png" alt="cat" class="h-40 absolute -right-8 -top-5 group-hover:scale-110 duration-200 ease-out">
+              <div class="text-content relative z-10 w-2/3">
+                <h3 class="text-3xl font-bold text-white">Eksperiments</h3>
+                <p class="text-base mt-2 text-white">Lorem ipsum dolor sit amet</p>
+              </div>
+            </a>
+  
+            <a href="#projects" onclick="delayHref(event, '#projects')" class="min-h-[160px] rounded-3xl bg-emerald-600 col-span-3 relative flex items-center justify-end p-8 group hover:scale-95 cursor-pointer duration-200 ease-out">
+              <img src="./img/cat.png" alt="page" class="h-40 absolute -left-6 -bottom-4 group-hover:scale-110 duration-200 ease-out">
+              <div class="text-content w-3/4">
+                <h3 class="text-3xl font-bold text-white text-end">Projects</h3>
+                <p class="text-white text-end">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </a>
+            <div class="min-h-[160px] rounded-3xl bg-teal-100"></div>
+        </div>
+
+
+
+      </section>
+  
+      <section id="about" class="w-full h-screen bg-emerald-200 mt-20 pt-20">
+        <h1 class="text-3xl font-bold text-center">about me</h1>
+      </section>
+
+      <section id="hobi" class="w-full h-screen bg-teal-100 mt-20 pt-20">
+        <h1 class="text-3xl font-bold text-center">Hobi saya</h1>
+      </section>
+      
+      <section id="skills" class="w-full h-screen bg-sky-200 mt-20 pt-20">
+        <h1 class="text-3xl font-bold text-center">skills</h1>
+      </section>
+  
+      <section id="experiments" class="w-full h-screen bg-purple-200 mt-20 pt-20">
+        <h1 class="text-3xl font-bold text-center">Eksperiments</h1>
+      </section>
+
+      <section id="projects" class="w-full h-screen bg-purple-200 mt-20 pt-20">
+        <h1 class="text-3xl font-bold text-center">Projects</h1>
+      </section>
+
+  </div>
+
+
+<script>
+  let navToggle = document.querySelectorAll('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const navMenuList = document.querySelector('.nav-menu-list')
+
+  const slide = function(){
+      navMenu.classList.toggle('translate-x-[-110%]')
+  }
+
+  navToggle[0].addEventListener('click', slide);
+  navToggle[1].addEventListener('click', slide);
+  navMenuList.addEventListener('click', slide);
+
+  function delayHref(event, url){
+    event.preventDefault();
+
+    const overlay = document.querySelector('.overlay');
+    overlay.classList.add('translate-x-[100%]')
+
+    setTimeout(function(){
+      window.location.href = url;
+    }, 500);
+
+    setTimeout(function(){
+      overlay.classList.add('translate-x-[200%]')
+      overlay.classList.remove('translate-x-[100%]')
+      // overlay.classList.add('hidden');
+    }, 1000);
+
+    setTimeout(function(){
+      overlay.classList.add('hidden');
+    }, 1500);
+
+    setTimeout(function(){
+      overlay.classList.remove('translate-x-[200%]');
+      overlay.classList.remove('hidden');
+    }, 2000);
+  }
+
+</script>
+</body>
+</html>
